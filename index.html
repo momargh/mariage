@@ -672,7 +672,8 @@ function showStatus(saved, d){
   if (saved) {
     p.textContent = d.presence === "oui" ? `Merci ! C'est noté : ${d.guests} ${d.guests > 1 ? "personnes" : "personne"}. Nous avons hâte de vous voir.` : "Merci de nous avoir prévenus. Vous nous manquerez.";
     a.className = "btn ghost"; a.textContent = "Prévenir aussi par WhatsApp";
-    statusEl.append(p, a);
+    statusEl.append(p);
+    if (!useForm) statusEl.append(a);
     confetti();
   } else {
     p.textContent = "Votre réponse est prête. Touchez le bouton pour l'envoyer aux mariés sur WhatsApp.";
