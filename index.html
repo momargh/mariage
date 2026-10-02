@@ -804,6 +804,8 @@ function updFab(){
 }
 fab.addEventListener("click", toRsvp);
 addEventListener("scroll", updFab, { passive: true }); addEventListener("resize", updFab);
+// a link ending in #rsvp (button and QR code on the printed invitation) opens straight on the reply form
+if (location.hash === "#rsvp") addEventListener("load", () => setTimeout(() => form.scrollIntoView({ block: "start" }), 400));
 
 /* =====================================================================
    THE 3D JOURNEY
