@@ -860,19 +860,19 @@ function initScene(){
   function poly(g, cx, cy, r, n, rot = 0){ g.beginPath(); for (let k = 0; k < n; k++) { const a = rot + k * 2 * Math.PI / n; g.lineTo(cx + Math.cos(a) * r, cy + Math.sin(a) * r); } g.closePath(); }
 
   const zelligeTex = tex(512, 512, (g, S) => {
-    g.fillStyle = "#ece0c4"; g.fillRect(0, 0, S, S);
+    g.fillStyle = "#f0eadc"; g.fillRect(0, 0, S, S);
     const c = S / 2;
     for (let i = 0; i <= 2; i++) for (let j = 0; j <= 2; j++) {
       const x = i * c, y = j * c;
-      star(g, x, y, c * .5, c * .37); g.fillStyle = (i + j) % 2 ? "#17120b" : "#c9a14a"; g.fill();
+      star(g, x, y, c * .5, c * .37); g.fillStyle = (i + j) % 2 ? "#17694a" : "#1c4f94"; g.fill();
       g.lineWidth = S / 110; g.strokeStyle = "#2b2420"; g.stroke();
-      star(g, x, y, c * .24, c * .15, 8, Math.PI / 8); g.fillStyle = (i + j) % 2 ? "#d4a94f" : "#f1e4c3"; g.fill(); g.lineWidth = S / 200; g.stroke();
+      star(g, x, y, c * .24, c * .15, 8, Math.PI / 8); g.fillStyle = (i + j) % 2 ? "#f3eee2" : "#d29b34"; g.fill(); g.lineWidth = S / 200; g.stroke();
       poly(g, x, y, c * .07, 8, Math.PI / 8); g.fillStyle = "#2b2420"; g.fill();
     }
     for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) {
       const x = (i + .5) * c, y = (j + .5) * c;
-      poly(g, x, y, c * .17, 8, Math.PI / 8); g.fillStyle = "#123d2e"; g.fill(); g.lineWidth = S / 110; g.strokeStyle = "#2b2420"; g.stroke();
-      poly(g, x, y, c * .07, 4, Math.PI / 4); g.fillStyle = "#d4a94f"; g.fill();
+      poly(g, x, y, c * .17, 8, Math.PI / 8); g.fillStyle = "#171310"; g.fill(); g.lineWidth = S / 110; g.strokeStyle = "#2b2420"; g.stroke();
+      poly(g, x, y, c * .07, 4, Math.PI / 4); g.fillStyle = "#2a9590"; g.fill();
     }
     blotch(g, S, S, 260, ["#ffffff", "#000000"], .07, 2, 14);
   });
@@ -989,7 +989,7 @@ function initScene(){
     plasterBox: new THREE.MeshStandardMaterial({ map: plasterTex, roughness: .95, envMapIntensity: .25, color: lc("#b98a66") }),
     zellige: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 1.1, 1.1), roughness: .2, envMapIntensity: .9 }),
     zelligeBox: new THREE.MeshStandardMaterial({ map: zelligeTex, roughness: .2, envMapIntensity: .9 }),
-    zelFloor: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 34, 34), color: lc("#cfc6b8"), roughness: .2, envMapIntensity: .7 }),
+    zelFloor: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 18, 18), color: lc("#e2dccf"), roughness: .2, envMapIntensity: .7 }),
     gebs: new THREE.MeshStandardMaterial({ map: rep(gebsTex, 1.4, 1.4), bumpMap: rep(gebsTex, 1.4, 1.4), bumpScale: .025, roughness: .9, envMapIntensity: .3 }),
     wood: new THREE.MeshStandardMaterial({ map: woodTex, bumpMap: woodTex, bumpScale: .03, roughness: .72, envMapIntensity: .35 }),
     woodPlain: new THREE.MeshStandardMaterial({ color: lc("#4b2a14"), roughness: .8 }),
@@ -1002,7 +1002,7 @@ function initScene(){
     orange: new THREE.MeshStandardMaterial({ color: lc("#f08a1c"), roughness: .5, emissive: lc("#5a2400") }),
     candle: new THREE.MeshStandardMaterial({ color: lc("#f4ead2"), roughness: .6, emissive: lc("#7a4a18"), emissiveIntensity: 0 }),
     runner: new THREE.MeshStandardMaterial({ map: rep(runnerTex, 1, 14), roughness: .95, envMapIntensity: .15 }),
-    corrFloor: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 4, 44), color: lc("#b3a78f"), roughness: .14, envMapIntensity: .9 }),
+    corrFloor: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 2.5, 28), color: lc("#d9d2c4"), roughness: .14, envMapIntensity: .9 }),
     ceiling: new THREE.MeshStandardMaterial({ map: rep(zelligeTex, 3, 32), color: lc("#7a5230"), roughness: .75, envMapIntensity: .3 }),
     recess: new THREE.MeshStandardMaterial({ map: rep(plasterTex, .3, .3), color: lc("#8a5a3a"), roughness: 1 })
   };
