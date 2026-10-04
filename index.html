@@ -19,7 +19,7 @@
 <title>Yasmine &amp; Mohamed Omar — Mariage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus+SC&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus+SC&family=Pinyon+Script&family=Amiri:wght@400;700&display=swap">
 <style>
 /* Layout: a fixed WebGL stage (Fès door → Tunis alley → shared riad) driven by scroll,
    captions pinned over it, then the invitation itself scrolls up over the courtyard.
@@ -122,6 +122,9 @@ html:not(.has3d) .wrap{padding-block:64px 60px}
 @keyframes write{to{stroke-dashoffset:0}}
 @keyframes fillin{to{fill-opacity:1}}
 .lede{font-size:1.3em;font-style:italic;max-width:26ch}
+.ayah{font-family:"Amiri","Scheherazade New","Traditional Arabic",serif;direction:rtl;font-size:clamp(19px,1.1vw + 14px,25px);line-height:2;text-align:center;margin:4px 0 0;background:linear-gradient(180deg,#fff3cf,#e0b45c 60%,#b8863a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ayah span{display:block}
+.ayah-ref{font-family:"Amiri",serif;direction:rtl;font-size:.82em;color:var(--ink-dim);margin-top:-6px}
 
 .date{display:flex;justify-content:center;text-align:center}
 .date .side{font-family:var(--f-cap);letter-spacing:.2em;font-size:.78em;color:var(--ink-dim);display:flex;flex-direction:column;gap:4px}
@@ -298,6 +301,8 @@ footer small{font-family:var(--f-cap);letter-spacing:.24em;color:var(--ink-dim);
     <div class="wrap">
       <header class="inv-head"><i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
         <div class="garland top" aria-hidden="true"></div>
+        <p class="ayah" lang="ar" dir="rtl"><span>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا</span><span>وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</span></p>
+        <p class="ayah-ref" lang="ar" dir="rtl">سورة الروم، الآية ٢١</p>
         <svg class="rings" viewBox="0 0 120 70" aria-hidden="true"><defs><linearGradient id="ringGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0c4"/><stop offset=".5" stop-color="#d9b060"/><stop offset="1" stop-color="#9a6d26"/></linearGradient></defs><circle cx="46" cy="42" r="20" fill="none" stroke="url(#ringGold)" stroke-width="4.5"/><circle cx="74" cy="42" r="20" fill="none" stroke="url(#ringGold)" stroke-width="4.5"/><path d="M74 14 l6 6 -6 7 -6 -7z" fill="#fff4d6" stroke="#d9b060" stroke-width="1.2"/></svg>
         <p class="eyebrow">Avec la bénédiction de leurs familles</p>
         <svg class="names" id="namesSvg" viewBox="0 0 1200 300" role="img">
