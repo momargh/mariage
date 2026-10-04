@@ -186,7 +186,15 @@ footer small{font-family:var(--f-cap);letter-spacing:.24em;color:var(--ink-dim);
 
 .linkbtn{background:none;border:0;color:var(--ink-dim);font:inherit;font-style:italic;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:6px}
 .linkbtn:hover{color:var(--gold-soft)}
-.fab{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));z-index:6;font-size:.7em;padding:10px 18px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.fab{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:6;font-size:.76em;padding:14px 24px;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.55),0 0 0 1px rgba(255,243,214,.35) inset}
+.fab:hover{transform:translateX(-50%) translateY(-1px)}
+.fab .chev{width:16px;height:16px;margin-left:2px}
+.guide{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:4px;font-style:italic;color:var(--ink-dim);font-size:.9em;line-height:1.35}
+.guide span:last-of-type{color:var(--gold-soft)}
+.chev{width:22px;height:22px;color:var(--gold);animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(6px);opacity:1}}
+.to-rsvp{display:flex;flex-direction:column;align-items:center;gap:2px;margin:-30px 0 -40px;font-style:italic;color:var(--gold-soft);text-align:center}
+@media (prefers-reduced-motion:reduce){.chev{animation:none}}
 .field .lbl{font-family:var(--f-cap);font-size:12px;letter-spacing:.22em;color:var(--gold)}
 .field .opt{letter-spacing:.05em;color:var(--ink-dim);font-family:var(--f-body);font-style:italic;font-size:13px;text-transform:none}
 .choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -271,7 +279,7 @@ footer small{font-family:var(--f-cap);letter-spacing:.24em;color:var(--ink-dim);
 <canvas id="petals" aria-hidden="true"></canvas>
 <div id="veil" role="status"><div class="star"></div><p>La porte s'ouvre…</p></div>
 
-<button class="btn fab" id="fab" type="button">Confirmer ma présence</button>
+<button class="btn fab" id="fab" type="button">✷ Confirmer ma présence <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 3l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/></svg></button>
 <main>
   <section id="journey" aria-label="Le voyage">
     <div class="chapter hero" id="c-hero">
@@ -287,6 +295,7 @@ footer small{font-family:var(--f-cap);letter-spacing:.24em;color:var(--ink-dim);
         <button class="btn" id="openDoor" type="button">Ouvrir la porte</button>
         <button class="btn ghost" id="skipIntro" type="button">Confirmer ma présence</button>
       </div>
+      <p class="guide"><span>Faites défiler pour entrer</span><span>Votre réponse se trouve tout en bas</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 3l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/></svg></p>
     </div>
 
     <div class="chapter story c-union" id="c-union">
@@ -338,6 +347,8 @@ footer small{font-family:var(--f-cap);letter-spacing:.24em;color:var(--ink-dim);
           <a class="btn ghost" id="calLink" target="_blank" rel="noopener">Ajouter à l'agenda</a>
         </div>
       </div>
+
+      <p class="to-rsvp">Confirmez votre présence juste en dessous<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 3l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".45"/></svg></p>
 
       <form class="rsvp" id="rsvp" novalidate>
         <div class="garland crown" aria-hidden="true"></div>
